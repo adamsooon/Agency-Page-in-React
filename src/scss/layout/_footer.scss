@@ -1,0 +1,51 @@
+.footer {
+  padding: remcalc(40) 0;
+
+  > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+  }
+}
+
+.footer-menu {
+  display: flex;
+}
+
+.footer-menu-item {
+  @include just-rythm(14);
+  margin-right: remcalc(35);
+  color: $light-gray;
+}
+
+.footer-menu-link {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: remcalc(-5);
+    left: 0;
+    width: 0;
+    height: remcalc(4);
+    transition: .3s;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+      background: $light-green;
+    }
+  }
+}
+
+.rights {
+  display: block;
+  @include just-rythm(14);
+  margin-bottom: remcalc(20);
+  color: $light-gray;
+}
+

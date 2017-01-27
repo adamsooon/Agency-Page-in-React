@@ -1,0 +1,18 @@
+/* Font Stack and Sizes */
+$font-stack: Arial, sans-serif !default;
+$base-size: 16 !default;
+$font-size: ($base-size * 1px) !default;
+
+/* Default Transition */
+$cubic: cubic-bezier(.17, .67, .47, 1) !default;
+
+/* Colors */
+$light-green: #7beec7;
+$light-gray: #9a9a9a;
+$dark-gray: #60606e;
+$white: #fff;
+
+/* Typography Map */
+$fonts: (
+  14: remcalc(30)
+);

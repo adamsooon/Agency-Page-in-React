@@ -10,6 +10,7 @@
     @include breakpoint(small) {
       order: 2;
       margin-bottom: 0;
+      justify-content: center;
     }
 
     @include breakpoint(medium) {
@@ -21,10 +22,15 @@
 .footer-box {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  @include breakpoint(small) {
+    align-items: center;
+  }
 
   @include breakpoint(medium) {
     flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
   }
 }
 

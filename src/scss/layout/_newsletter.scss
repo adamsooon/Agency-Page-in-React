@@ -24,13 +24,19 @@
 }
 
 .newsletter-header {
+  text-align: center;
   color: $white;
   margin-bottom: remcalc(20);
 }
 
 .newsletter-form {
   padding: remcalc(20) remcalc(25) remcalc(20) remcalc(20);
+  text-align: center;
   background: white;
+
+  @include breakpoint(small) {
+    text-align: left;
+  }
 
   @include breakpoint(medium) {
     flex: 1 1 remcalc(555);
@@ -41,24 +47,36 @@
 .newsletter-form-title {
   margin-bottom: remcalc(10);
   @include just-rythm(24);
+  text-align: center;
   color: $dark-gray;
 }
 
 .newsletter-form-subtitle {
-  @include just-rythm(16)
+  @include just-rythm(16);
   margin-bottom: remcalc(20);
 }
 
 .newsletter-form-box {
   position: relative;
-  display: flex;
+
+  @include breakpoint(small) {
+    display: flex;
+  }
 }
 
 .newsletter-email {
-  width: 80%;
+  width: 100%;
+  height: remcalc(50);
+  margin-bottom: remcalc(20);
   border: 1px solid #e5e5e5;
-  border-right: 0;
   padding-left: remcalc(20);
+
+  @include breakpoint(small) {
+    width: 80%;
+    height: auto;
+    margin-bottom: 0;
+    border-right: 0;
+  }
 
   @include breakpoint(medium) {
     width: remcalc(375);
@@ -73,10 +91,15 @@
 
 .newsletter-label {
   position: absolute;
+  left: 0;
   font-size: remcalc(12);
   font-family: 'Montserrat', sans-serif;
   transform: translate(20px, 17px);
-  transition: .3s;
+  transition: transform .3s;
+
+  @include breakpoint(small) {
+    left: auto;
+  }
 
   &.is-active {
     transform: translate(0, -20px);

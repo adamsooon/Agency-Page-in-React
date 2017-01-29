@@ -7,26 +7,25 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: remcalc(1170);
-  padding: remcalc(20);
+  padding: 0 remcalc(20);
 
   @include breakpoint(large) {
     padding: 0 remcalc(15);
   }
 }
 
-.social-links {
-  display: flex;
-}
-
-.social-link {
+section {
   position: relative;
-  font-size: remcalc(17);
 
-  @include breakpoint(large) {
-    margin-right: remcalc(5);
+  &.small {
+    padding: remcalc(20) 0;
+
+    @include breakpoint(small) {
+      padding: remcalc(50) 0;
+    }
   }
 
-  &:last-child {
-    margin-right: 0;
+  &.green {
+    background: $light-green;
   }
 }

@@ -2,9 +2,15 @@
 @import 'abstracts/functions';
 @import 'abstracts/variables';
 
+/* base */
+@import 'base/typography';
+
 /* components */
+@import 'components/buttons';
+@import 'components/socialMedia';
 
 /*layout */
+@import 'layout/newsletter';
 @import 'layout/footer';
 
 /* pages */

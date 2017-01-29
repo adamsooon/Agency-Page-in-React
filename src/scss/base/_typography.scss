@@ -1,0 +1,16 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $bold;
+}
+
+h2 {
+  @include just-rythm(22);
+
+  @include breakpoint(medium) {
+    @include just-rythm(30);
+  }
+}
+

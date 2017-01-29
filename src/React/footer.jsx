@@ -1,5 +1,5 @@
 import React from 'react';
-import Medias from './SocialmediaBox';
+import Medias from './SocialMediaBox';
 
 export default class footer extends React.Component {
   // static propTypes = {
@@ -19,7 +19,7 @@ export default class footer extends React.Component {
   render() {
     return (
       <footer className="footer">
-        <div className="container">
+        <div className="container footer-box">
           <ul className="footer-menu">
             <li className="footer-menu-item">
               <a href="#" className="footer-menu-link">
@@ -53,9 +53,9 @@ export default class footer extends React.Component {
             </li>
           </ul>
           <div className="footer-info">
-          <span className="rights">
-            Created by akhouad 2016. All Rights Reserved
-          </span>
+            <span className="rights">
+              Created by akhouad 2016. All Rights Reserved
+            </span>
             <Medias />
           </div>
         </div>

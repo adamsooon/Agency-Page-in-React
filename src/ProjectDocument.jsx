@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './React/footer';
+import Newsletter from './React/Newsletter';
 /*import routeMap from 'json!absolvent/routeMap.json'; */
 
 export default class ProjectDocument extends React.Component {
@@ -40,6 +41,7 @@ export default class ProjectDocument extends React.Component {
 
         {this.props.children}
 
+        <Newsletter />
         <Footer />
       </div>
     );

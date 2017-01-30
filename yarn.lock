@@ -2558,6 +2558,10 @@ electron-to-chromium@^1.2.0, electron-to-chromium@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.2.1.tgz#63ac7579a1c5bedb296c8607621f2efc9a54b968"
 
+email-addresses:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/email-addresses/-/email-addresses-2.0.2.tgz#cf529f3fe8ec1d1e5967de6b4e36d0cce42ac8fc"
+
 emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"

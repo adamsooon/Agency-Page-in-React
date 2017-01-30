@@ -1,16 +1,19 @@
 import React from 'react';
 import classnames from 'classnames';
 
+const correctMail = /^[a-z0-9\._%-]+@[a-z0-9\.-]+\.[a-z]{2,4}$/i;
+
 export default class Newsletter extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      label: false
+      label: false,
+      newsletterError: ''
     };
   }
 
-  handlerBlur = () => {
+  newsletterBlur = () => {
     if(this.refs.email.value.length > 0) {
       this.setState({
         label: true
@@ -21,7 +24,30 @@ export default class Newsletter extends React.Component {
         label: false
       });
     }
-  }
+  };
+
+  newsletterSubmit = (e) => {
+    e.preventDefault();
+
+    if (!this.refs.email.value.match(correctMail)) {
+      this.setState({
+        newsletterError: true,
+      });
+    }
+    else {
+      this.setState({
+        newsletterError: false,
+      });
+    }
+  };
+
+  newsletterChange = () => {
+    if (this.refs.email.value.match(correctMail)) {
+      this.setState({
+        newsletterError: false,
+      });
+    }
+  };
 
   render() {
     return (
@@ -35,7 +61,10 @@ export default class Newsletter extends React.Component {
               <span>get in touch</span>
             </a>
           </div>
-          <form className="newsletter-form">
+          <form
+            className="newsletter-form"
+            onSubmit={this.newsletterSubmit}
+          >
             <h3 className="newsletter-form-title">
               STAY INFORMED WITH OUR NEWSLETTER
             </h3>
@@ -47,11 +76,13 @@ export default class Newsletter extends React.Component {
             <div className="newsletter-form-box">
               <input
                 type="text"
-                id="newsletter-email"
-                className="newsletter-email"
+                className={classnames(
+                'newsletter-email', {
+                  'invalid': this.state.newsletterError
+                })}
                 ref="email"
-                onBlur={this.handlerBlur}
-                required
+                onChange={this.newsletterChange}
+                onBlur={this.newsletterBlur}
               />
               <label
                 htmlFor="newsletter-email"
@@ -62,10 +93,21 @@ export default class Newsletter extends React.Component {
               >
                 Your email
               </label>
-              <button type="submit" className="btn small green">
+              <button
+                type="submit"
+                className="btn small green"
+              >
                 <span>Send</span>
               </button>
             </div>
+            {this.state.newsletterError && (
+              <div className="newsletter-error">
+                <span>
+                  Niepoprawny format adresu e-mail <br />
+                  Przykład: krzysztofkowalski@gmail.com
+                </span>
+              </div>
+            )}
           </form>
         </div>
       </section>

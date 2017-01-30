@@ -4,7 +4,6 @@ import React from 'react';
 
 export default class HomepageDocument extends React.Component {
   componentDidMount() {
-    console.log(this.props.location);
     this.timerID = setInterval(
       () => this.tick(),
       1000
@@ -27,41 +26,16 @@ export default class HomepageDocument extends React.Component {
     };
   }
 
-  activenext = () => {
-    // if (!this.state.next) {
-    //   this.setState({
-    //   next: true
-    // });
-    // console.log('Adam');
-    // }
-    // else {
-    //   this.setState({
-    //   next: false
-    // });
-    // }
-    this.setState({
-      visible: true
-    })
-  }
-
   cookiesClose = (e) => {
     e.preventDefault();
     localStorage.setItem("cookies", "accepted");
-  }
+  };
 
   tick() {
     this.setState({
       date: new Date()
     });
-  }
-
-  handler = (e) => {
-    this.setState({
-      vl: e.target.value,
-      visible: false
-    });
-    console.log(e.target.value);
-  }
+  };
 
   render() {
 

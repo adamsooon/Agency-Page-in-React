@@ -2,10 +2,6 @@ import React from 'react';
 import Medias from './SocialMediaBox';
 
 export default class footer extends React.Component {
-  // static propTypes = {
-  //   vl: React.PropTypes.string.isRequired,
-  //   change: React.PropTypes.func.isRequired,
-  // };
 
   constructor(props) {
     super(props);

@@ -30,6 +30,7 @@
 }
 
 .newsletter-form {
+  position: relative;
   padding: remcalc(20) remcalc(25) remcalc(20) remcalc(20);
   text-align: center;
   background: white;
@@ -47,7 +48,6 @@
 .newsletter-form-title {
   margin-bottom: remcalc(10);
   @include just-rythm(24);
-  text-align: center;
   color: $dark-gray;
 }
 
@@ -87,6 +87,10 @@
       transform: translate(0, -20px);
     }
   }
+
+  &.invalid {
+    border: 1px solid red;
+  }
 }
 
 .newsletter-label {
@@ -104,4 +108,14 @@
   &.is-active {
     transform: translate(0, -20px);
   }
+}
+
+.newsletter-error {
+  position: absolute;
+  bottom: remcalc(-40);
+  max-width: remcalc(240);
+  padding: remcalc(10);
+  font-size: remcalc(12);
+  color: $white;
+  background: red;
 }

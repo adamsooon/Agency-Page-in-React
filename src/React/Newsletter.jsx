@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-
-const correctMail = /^[a-z0-9\._%-]+@[a-z0-9\.-]+\.[a-z]{2,4}$/i;
+import isEmailFormatValid from '../isEmailFormatValid';
 
 export default class Newsletter extends React.Component {
 
@@ -29,7 +28,7 @@ export default class Newsletter extends React.Component {
   newsletterSubmit = (e) => {
     e.preventDefault();
 
-    if (!this.refs.email.value.match(correctMail)) {
+    if (!isEmailFormatValid(this.refs.email.value)) {
       this.setState({
         newsletterError: true,
       });
@@ -42,7 +41,7 @@ export default class Newsletter extends React.Component {
   };
 
   newsletterChange = () => {
-    if (this.refs.email.value.match(correctMail)) {
+    if (isEmailFormatValid(this.refs.email.value)) {
       this.setState({
         newsletterError: false,
       });

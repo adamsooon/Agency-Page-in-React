@@ -1,8 +1,12 @@
 .navigation-component {
   position: relative;
+  padding-top: remcalc(30);
 }
 
 .main-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   max-width: remcalc(500);
   margin-left: auto;
@@ -36,9 +40,10 @@
 }
 
 .burger-container {
-  position: absolute;
-  right: remcalc(30);
-  top: remcalc(15);
+  position: relative;
+  z-index: 99;
+  width: remcalc(30);
+  margin: 0 remcalc(30) 0 auto;
   cursor: pointer;
 
   &.is-active {

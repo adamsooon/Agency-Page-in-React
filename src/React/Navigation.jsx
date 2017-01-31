@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
 import classnames from 'classnames';
+import MediaQuery from 'react-responsive';
+import Breakpoint from '../breakpoints.json';
+import NavigationMenu from './NavigationMenu';
 
 export default class Navigation extends React.Component {
 
@@ -20,71 +22,18 @@ export default class Navigation extends React.Component {
         })}
         onClick={this.props.toggleMenu}
       >
+        <MediaQuery query={Breakpoint.tablet}>
+          {!this.props.burgerExpanded &&(
+           <span className="burger-label">Menu</span>
+          )}
+        </MediaQuery>
         <span className="burger-line"></span>
         <span className="burger-line"></span>
         <span className="burger-line"></span>
       </div>
 
       {this.props.burgerExpanded && (
-
-        <nav className="navigation">
-        <ul className="main-menu">
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>Home</span>
-            </Link>
-          </li>
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>About us</span>
-            </Link>
-          </li>
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>Services</span>
-            </Link>
-          </li>
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>Portfolio</span>
-            </Link>
-          </li>
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>Blog</span>
-            </Link>
-          </li>
-          <li className="main-menu-item">
-            <Link
-              to="/"
-              className="main-menu-link"
-              activeClassName="is-active"
-            >
-              <span>Contact us</span>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <NavigationMenu />
      )}
     </div>
     );

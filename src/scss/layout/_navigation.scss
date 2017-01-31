@@ -9,6 +9,7 @@
   padding: remcalc(50);
   background: #7beec7;
   color: $white;
+  text-transform: uppercase;
 }
 
 .main-menu-item {
@@ -27,6 +28,13 @@
 
 //burger menu
 
+.burger-label {
+  position: absolute;
+  transform: translate(-55px, 2px);
+  font-family: 'Montserrat', sans-serif;
+  color: $light-green;
+}
+
 .burger-container {
   position: absolute;
   right: remcalc(30);
@@ -36,6 +44,7 @@
   &.is-active {
     .burger-line {
       background: white;
+
       &:nth-child(1) {
         transform: translate3d(0, 10px, 0) rotate(45deg);
       }

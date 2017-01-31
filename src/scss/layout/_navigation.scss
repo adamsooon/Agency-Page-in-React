@@ -1,19 +1,34 @@
+.menu-open {
+  overflow-y: hidden;
+
+  @include breakpoint(small) {
+    overflow-y: auto;
+  }
+}
+
 .navigation-component {
   position: relative;
   padding-top: remcalc(30);
 }
 
 .main-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  z-index: 9;
+  height: 100vh;
   width: 100%;
-  max-width: remcalc(500);
   margin-left: auto;
-  padding: remcalc(50);
+  padding: remcalc(100) remcalc(50) remcalc(50);
   background: #7beec7;
   color: $white;
   text-transform: uppercase;
+
+  @include breakpoint(small) {
+    height: auto;
+    max-width: remcalc(500);
+    padding: remcalc(50);
+  }
 }
 
 .main-menu-item {
@@ -62,6 +77,11 @@
         transform: translate3d(0, -10px, 0) rotate(-45deg);
       }
     }
+  }
+
+  &.is-scrolling {
+    position: fixed;
+    right: 0;
   }
 }
 

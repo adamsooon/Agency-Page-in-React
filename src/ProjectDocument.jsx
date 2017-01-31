@@ -28,14 +28,15 @@ export default class ProjectDocument extends React.Component {
   }
 
   toggleMenu = () => {
+    document.body.classList.toggle('menu-open');
     if( !this.state.burgerExpanded ) {
       this.setState({
         burgerExpanded: true
-      })
+      });
     } else {
       this.setState({
         burgerExpanded: false
-      })
+      });
     }
   };
 
@@ -53,8 +54,8 @@ export default class ProjectDocument extends React.Component {
     return (
       <div>
         <Navigation
-          toggleMenu = {this.toggleMenu}
-          burgerExpanded = {this.state.burgerExpanded}
+          toggleMenu={this.toggleMenu}
+          burgerExpanded={this.state.burgerExpanded}
         />
 
         {this.props.children}

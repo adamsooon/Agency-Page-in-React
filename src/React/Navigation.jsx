@@ -9,7 +9,38 @@ export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isScrolling: false
     };
+  }
+
+  componentDidMount() {
+    const that = this;
+    let didScroll = false;
+
+    window.onscroll = function onScroll() {
+      didScroll = true;
+    };
+
+    this.scrollInterval = setInterval(() => {
+      if (didScroll) {
+        didScroll = false;
+
+        if (window.pageYOffset > 200) {
+          that.setState({
+            isScrolling: true,
+          });
+        } 
+        else {
+          that.setState({
+            isScrolling: false,
+          });
+        }
+      }
+    }, 300);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.scrollInterval);
   }
 
   render() {
@@ -18,7 +49,8 @@ export default class Navigation extends React.Component {
       <div
         className={classnames(
         'burger-container', {
-          'is-active': this.props.burgerExpanded
+          'is-active': this.props.burgerExpanded,
+          'is-scrolling': this.props.burgerExpanded && this.state.isScrolling
         })}
         onClick={this.props.toggleMenu}
       >

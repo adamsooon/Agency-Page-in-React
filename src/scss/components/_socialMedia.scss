@@ -15,7 +15,7 @@
 .icon-social {
   &:hover {
     @include breakpoint(medium) {
-      transition: .4s $cubic;
+      transition: $transition-fast $cubic;
       color: $light-green;
     }
   }

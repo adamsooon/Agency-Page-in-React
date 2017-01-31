@@ -1,0 +1,61 @@
+.navigation-component {
+  position: relative;
+}
+
+.main-menu {
+  width: 100%;
+  max-width: remcalc(500);
+  margin-left: auto;
+  padding: remcalc(50);
+  background: #7beec7;
+  color: $white;
+}
+
+.main-menu-item {
+  @include just-rythm(24);
+  margin-bottom: remcalc(5);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-menu-link {
+  transition: color $transition-fast $cubic;
+
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+//burger menu
+
+.burger-container {
+  position: absolute;
+  right: remcalc(30);
+  top: remcalc(15);
+  cursor: pointer;
+
+  &.is-active {
+    .burger-line {
+      background: white;
+      &:nth-child(1) {
+        transform: translate3d(0, 10px, 0) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translate3d(0, -10px, 0) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.burger-line {
+  display: block;
+  width: remcalc(30);
+  height: remcalc(5);
+  margin-bottom: remcalc(5);
+  transition: $transition-fast $cubic;
+  background: $light-green;
+}

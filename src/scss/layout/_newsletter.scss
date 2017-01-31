@@ -71,7 +71,7 @@
   padding-left: remcalc(20);
 
   @include breakpoint(small) {
-    width: 80%;
+    width: 85%;
     height: auto;
     margin-bottom: 0;
     border-right: 0;
@@ -98,7 +98,7 @@
   font-size: remcalc(12);
   font-family: 'Montserrat', sans-serif;
   transform: translate(20px, 17px);
-  transition: transform .3s;
+  transition: transform $transition-fast;
 
   @include breakpoint(small) {
     left: auto;
@@ -117,4 +117,11 @@
   font-size: remcalc(12);
   color: $white;
   background: red;
+  animation: error 1s;
+}
+
+// error box animation
+@keyframes error {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

@@ -40,6 +40,12 @@ export default class ProjectDocument extends React.Component {
     }
   };
 
+  onClickOutside = () => {
+    this.setState({
+      burgerExpanded: false
+    });
+  };
+
   componentWillReceiveProps(props) {
     if (props.location.pathname !== this.props.location.pathname) {
       window.scrollTo(0, 0);
@@ -56,6 +62,7 @@ export default class ProjectDocument extends React.Component {
         <Navigation
           toggleMenu={this.toggleMenu}
           burgerExpanded={this.state.burgerExpanded}
+          onClickOutside={this.onClickOutside}
         />
 
         {this.props.children}

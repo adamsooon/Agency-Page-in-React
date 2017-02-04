@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const myElement = document.getElementById('app')
+const myElement = document.getElementById('app');
 
 export default class OutClickListener extends React.Component {
 
@@ -17,11 +17,11 @@ export default class OutClickListener extends React.Component {
   };
 
   componentDidMount () {
-    myElement.addEventListener('click', this.handleDocumentClick)
+    myElement.addEventListener('click', this.handleDocumentClick);
   }
 
   componentWillUnmount () {
-    myElement.removeEventListener('click', this.handleDocumentClick)
+    myElement.removeEventListener('click', this.handleDocumentClick);
   }
 
   /* using fat arrow to bind to instance */

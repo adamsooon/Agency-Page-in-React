@@ -41,6 +41,7 @@ export default class ProjectDocument extends React.Component {
   };
 
   onClickOutside = () => {
+    document.body.classList.remove('menu-open');
     this.setState({
       burgerExpanded: false
     });

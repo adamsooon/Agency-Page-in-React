@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import routeMap from '../routeMap.json';
 import { TweenLite } from 'gsap';
 
 export default class NavigationMenu extends React.Component {
@@ -11,7 +12,7 @@ export default class NavigationMenu extends React.Component {
   }
 
   componentDidMount() {
-    TweenLite.from(this.refs.menu, 1, {opacity:0, width:0});
+    TweenLite.from(this.refs.menu, 1, { opacity: 0, width: 0 });
   }
 
   render() {
@@ -23,18 +24,16 @@ export default class NavigationMenu extends React.Component {
       >
         <li className="main-menu-item">
           <Link
-            to="/"
+            to={routeMap.home}
             className="main-menu-link"
-            activeClassName="is-active"
           >
             <span>Home</span>
           </Link>
         </li>
         <li className="main-menu-item">
           <Link
-            to="/"
+            to={routeMap.about}
             className="main-menu-link"
-            activeClassName="is-active"
           >
             <span>About us</span>
           </Link>
@@ -43,7 +42,6 @@ export default class NavigationMenu extends React.Component {
           <Link
             to="/"
             className="main-menu-link"
-            activeClassName="is-active"
           >
             <span>Services</span>
           </Link>
@@ -52,7 +50,6 @@ export default class NavigationMenu extends React.Component {
           <Link
             to="/"
             className="main-menu-link"
-            activeClassName="is-active"
           >
             <span>Portfolio</span>
           </Link>
@@ -70,7 +67,6 @@ export default class NavigationMenu extends React.Component {
           <Link
             to="/"
             className="main-menu-link"
-            activeClassName="is-active"
           >
             <span>Contact us</span>
           </Link>

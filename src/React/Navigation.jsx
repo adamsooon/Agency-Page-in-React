@@ -23,7 +23,7 @@ export default class Navigation extends React.Component {
     if(this.props.burgerExpanded) {
       this.props.onClickOutside();
     }
-  }
+  };
 
   componentDidMount() {
     const that = this;

@@ -27,6 +27,11 @@ export default class ProjectDocument extends React.Component {
     };
   }
 
+  cookiesClose = (e) => {
+    e.preventDefault();
+    localStorage.setItem("cookies", "accepted");
+  };
+
   toggleMenu = () => {
     document.body.classList.toggle('menu-open');
     if( !this.state.burgerExpanded ) {

@@ -7,45 +7,23 @@ export default class Newsletter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      label: false,
-      newsletterError: ''
+      label: '',
+      isNewsletterSubmitted: false,
     };
   }
-
-  newsletterBlur = () => {
-    if(this.refs.email.value.length > 0) {
-      this.setState({
-        label: true
-      });
-    }
-    else {
-      this.setState({
-        label: false
-      });
-    }
-  };
 
   newsletterSubmit = (e) => {
     e.preventDefault();
 
-    if (!isEmailFormatValid(this.refs.email.value)) {
-      this.setState({
-        newsletterError: true,
-      });
-    }
-    else {
-      this.setState({
-        newsletterError: false,
-      });
-    }
+    this.setState({
+      isNewsletterSubmitted: true,
+    });
   };
 
-  newsletterChange = () => {
-    if (isEmailFormatValid(this.refs.email.value)) {
-      this.setState({
-        newsletterError: false,
-      });
-    }
+  newsletterChange = (evt) => {
+    this.setState({
+      label: evt.target.value,
+    });
   };
 
   render() {
@@ -77,17 +55,15 @@ export default class Newsletter extends React.Component {
                 type="text"
                 className={classnames(
                 'newsletter-email', {
-                  'invalid': this.state.newsletterError
+                  'invalid': !isEmailFormatValid(this.state.label) && this.state.isNewsletterSubmitted
                 })}
-                ref="email"
                 onChange={this.newsletterChange}
-                onBlur={this.newsletterBlur}
               />
               <label
                 htmlFor="newsletter-email"
                 className={classnames(
                 'newsletter-label', {
-                  'is-active': this.state.label
+                  'is-active': this.state.label.length > 0
                 })}
               >
                 Your email
@@ -99,7 +75,7 @@ export default class Newsletter extends React.Component {
                 <span>Send</span>
               </button>
             </div>
-            {this.state.newsletterError && (
+            {!isEmailFormatValid(this.state.label) && this.state.isNewsletterSubmitted  && (
               <div className="newsletter-error">
                 <span>
                   Niepoprawny format adresu e-mail <br />

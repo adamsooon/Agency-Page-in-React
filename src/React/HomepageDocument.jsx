@@ -60,6 +60,13 @@ export default class HomepageDocument extends React.Component {
                   <h2 className="section-title">
                     History of agency
                   </h2>
+                  <span className="text-content">
+                    Porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
+                    adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore 
+                    et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis 
+                    nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
+                    ex ea commodi modi tempora incidunt ut labore.
+                  </span>
                 </div>
               </div>
             </MediaQuery>

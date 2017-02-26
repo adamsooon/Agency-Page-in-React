@@ -4,6 +4,7 @@ body {
 }
 
 .container {
+  position: relative;
   width: 100%;
   margin: 0 auto;
   max-width: remcalc(1170);
@@ -28,4 +29,8 @@ section {
   &.green {
     background: $light-green;
   }
+}
+
+.content {
+  margin-top:  remcalc(-60);
 }

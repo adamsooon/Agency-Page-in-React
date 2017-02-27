@@ -10,7 +10,6 @@ h4 {
 
 h1 {
   font-size: remcalc(30);
-  
   @include breakpoint(small) {
     font-size: remcalc(48);
   }
@@ -24,13 +23,13 @@ h2 {
 }
 
 span {
-	display: block;
+  display: block;
 }
 
 .section-title {
   position: relative;
   z-index: 1;
-  
+
   &:before {
     position: absolute;
     bottom: remcalc(5);
@@ -43,7 +42,7 @@ span {
 }
 
 .text-content {
-	@include breakpoint(medium) {
-		@include just-rythm(16);
-	}
+  @include breakpoint(medium) {
+    @include just-rythm(16);
+  }
 }

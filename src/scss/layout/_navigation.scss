@@ -43,6 +43,10 @@
   &:hover {
     color: $light-gray;
   }
+
+  &.is-active {
+    color: $dark-gray;
+  }
 }
 
 //burger menu

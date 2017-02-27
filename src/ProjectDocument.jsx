@@ -69,6 +69,7 @@ export default class ProjectDocument extends React.Component {
           toggleMenu={this.toggleMenu}
           burgerExpanded={this.state.burgerExpanded}
           onClickOutside={this.onClickOutside}
+          location={this.props.location}
         />
 
         {this.props.children}

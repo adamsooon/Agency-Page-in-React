@@ -1,14 +1,13 @@
 .homepage-header {
   padding: remcalc(75) 0;
-  background: url('/img/home/hero_bg.jpg') 0 0/cover no-repeat;
-  
+  background: url('/img/home/hero_bg.jpg') 0 0 / cover no-repeat;
   @include breakpoint(small) {
-  	padding: remcalc(100) 0;
+    padding: remcalc(100) 0;
   }
 
   @include breakpoint(medium) {
-  	padding: remcalc(100) 0 0;
-  	margin-bottom: remcalc(150);
+    padding: remcalc(100) 0 0;
+    margin-bottom: remcalc(150);
   }
   @include breakpoint(large) {
     padding-top: remcalc(175);
@@ -22,8 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  >.text-content {
+
+  > .text-content {
     text-align: center;
   }
 }
@@ -62,30 +61,30 @@
 }
 
 .history-photo {
-	position: relative;
-	align-self: flex-end;
-	
-	@include breakpoint(medium) {
-		flex: 0 1 remcalc(350);
+  position: relative;
+  align-self: flex-end;
+
+  @include breakpoint(medium) {
+    flex: 0 1 remcalc(350);
     bottom: remcalc(-75);
-	}
-  
+  }
+
   @include breakpoint(large) {
     flex: 0 1 remcalc(450);
     bottom: remcalc(-100);
   }
 
   > img {
-  	display: block;
-  	width: 100%;
+    display: block;
+    width: 100%;
   }
 }
 
 .history-description {
-	@include breakpoint(medium) {
-		flex: 0 1 remcalc(450);
+  @include breakpoint(medium) {
+    flex: 0 1 remcalc(450);
     padding-top: remcalc(100);
-	}
+  }
 
   @include breakpoint(large) {
     flex: 0 1 remcalc(545);
@@ -93,11 +92,10 @@
   }
 
   >.text-content {
-    	padding-bottom: remcalc(25);
-  		
-  		@include breakpoint(large) {
-    		padding-bottom: remcalc(50);
-  		}
+    padding-bottom: remcalc(25);
+    @include breakpoint(large) {
+      padding-bottom: remcalc(50);
+    }
   }
 
 }

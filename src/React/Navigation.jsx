@@ -16,7 +16,8 @@ export default class Navigation extends React.Component {
 
   static propTypes = {
     burgerExpanded: React.PropTypes.bool.isRequired,
-    onClickOutside: React.PropTypes.func.isRequired
+    onClickOutside: React.PropTypes.func.isRequired,
+    location: React.PropTypes.object.isRequired,
   };
 
   onClickOutside = () => {
@@ -80,7 +81,9 @@ export default class Navigation extends React.Component {
         </div>
 
         {this.props.burgerExpanded && (
-          <NavigationMenu />
+          <NavigationMenu
+            location={this.props.location}
+          />
        )}
       </div>
     </OutClickListener>

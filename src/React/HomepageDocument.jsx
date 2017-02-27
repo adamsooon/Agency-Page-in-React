@@ -1,6 +1,7 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
 import Breakpoint from '../breakpoints.json';
+import Slider from 'react-slick';
 
 export default class HomepageDocument extends React.Component {
 
@@ -13,41 +14,49 @@ export default class HomepageDocument extends React.Component {
     };
   }
 
-  tick() {
-    this.setState({
-      date: new Date()
-    });
-  };
-
-  componentDidMount() {
-    this.timerID = setInterval(
-    () => this.tick(),
-    1000
-    );
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
-
   render() {
+    const heroSlider = {
+      dots: false,
+      arrows: false,
+      fade: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      speed: 1000,
+      slidesToShow: 1,
+    };
 
     return (
       <div className="content">
         <header className="homepage-header">
           <div className="container">
-            <div className="hero">
-              <div className="hero-top">
-                <span>We're</span>
-              </div>
-              <div className="hero-title">
-                <h1>Creative Agency</h1>
-              </div>
-              <span className="text-content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </span>
-            </div>
+            <ul className="hero">
+              <Slider {...heroSlider}>
+                <li className="hero-item">
+                  <div className="hero-top">
+                    <span>We're</span>
+                  </div>
+                  <div className="hero-title">
+                    <h1>Creative Agency</h1>
+                  </div>
+                  <span className="text-content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </span>
+                </li>
+                <li className="hero-item">
+                  <div className="hero-top">
+                    <span>We're</span>
+                  </div>
+                  <div className="hero-title">
+                    <h1>Digital Agency</h1>
+                  </div>
+                  <span className="text-content">
+                    Let's work together
+                  </span>
+                </li>
+              </Slider>
+            </ul>
             <MediaQuery query={Breakpoint.medium}>
               <div className="homepage-history">
                 <figure className="history-photo">
@@ -72,7 +81,6 @@ export default class HomepageDocument extends React.Component {
             </MediaQuery>
           </div>
         </header>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
   }

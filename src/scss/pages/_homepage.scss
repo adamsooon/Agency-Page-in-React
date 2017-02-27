@@ -18,10 +18,9 @@
 .hero {
   max-width: remcalc(555);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
 
+.hero-item {
   > .text-content {
     text-align: center;
   }
@@ -29,17 +28,23 @@
 
 .hero-top {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-width: remcalc(100);
-  min-height: remcalc(30);
   margin: 0 auto;
   font-size: remcalc(18);
   font-weight: $bold;
   font-family: $font-headers;
   color: $dark-gray;
-  background: $light-green;
   text-transform: uppercase;
+
+  > span {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: remcalc(100);
+    min-height: remcalc(30);
+    background: $light-green;
+  }
 }
 
 .hero-title {

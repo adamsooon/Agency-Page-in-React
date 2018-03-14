@@ -1,0 +1,48 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $bold;
+  text-transform: uppercase;
+  color: $dark-gray;
+}
+
+h1 {
+  font-size: remcalc(30);
+  @include breakpoint(small) {
+    font-size: remcalc(48);
+  }
+}
+
+h2 {
+  @include just-rythm(22);
+  @include breakpoint(medium) {
+    @include just-rythm(30);
+  }
+}
+
+span {
+  display: block;
+}
+
+.section-title {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    position: absolute;
+    bottom: remcalc(5);
+    z-index: -1;
+    content: '';
+    width: remcalc(65);
+    height: remcalc(20);
+    background: $light-green;
+  }
+}
+
+.text-content {
+  @include breakpoint(medium) {
+    @include just-rythm(16);
+  }
+}

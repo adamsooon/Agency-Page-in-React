@@ -2,16 +2,25 @@
 @import 'abstracts/functions';
 @import 'abstracts/variables';
 
+/* base */
+@import 'base/typography';
+
 /* components */
+@import 'components/buttons';
+@import 'components/socialMedia';
 
 /*layout */
+@import 'layout/navigation';
+@import 'layout/newsletter';
 @import 'layout/footer';
 
 /* pages */
+@import 'pages/homepage';
 @import 'pages/common';
 
 /* vendors */
 @import 'vendors/fontello';
+@import 'vendors/slick';
 @import 'vendors/reset';
 
 

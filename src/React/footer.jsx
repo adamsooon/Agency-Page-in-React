@@ -1,11 +1,8 @@
 import React from 'react';
-import Medias from './SocialmediaBox';
+import { Link } from 'react-router';
+import Medias from './SocialMediaBox';
 
 export default class footer extends React.Component {
-  // static propTypes = {
-  //   vl: React.PropTypes.string.isRequired,
-  //   change: React.PropTypes.func.isRequired,
-  // };
 
   constructor(props) {
     super(props);
@@ -19,43 +16,61 @@ export default class footer extends React.Component {
   render() {
     return (
       <footer className="footer">
-        <div className="container">
+        <div className="container footer-box">
           <ul className="footer-menu">
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>Home</span>
-              </a>
+              </Link>
             </li>
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>About us</span>
-              </a>
+              </Link>
             </li>
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>Services</span>
-              </a>
+              </Link>
             </li>
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>Portfolio</span>
-              </a>
+              </Link>
             </li>
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>Blog</span>
-              </a>
+              </Link>
             </li>
             <li className="footer-menu-item">
-              <a href="#" className="footer-menu-link">
+              <Link
+                to="/"
+                className="footer-menu-link"
+              >
                 <span>Contact us</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="footer-info">
-          <span className="rights">
-            Created by akhouad 2016. All Rights Reserved
-          </span>
+            <span className="rights">
+              Created by akhouad 2016. All Rights Reserved
+            </span>
             <Medias />
           </div>
         </div>

@@ -1,5 +1,6 @@
 /* Font Stack and Sizes */
-$font-stack: Arial, sans-serif !default;
+$font-stack: 'Open Sans', sans-serif !default;
+$font-headers: 'Montserrat', sans-serif;
 $base-size: 16 !default;
 $font-size: ($base-size * 1px) !default;
 
@@ -12,7 +13,18 @@ $light-gray: #9a9a9a;
 $dark-gray: #60606e;
 $white: #fff;
 
+/* Transitions */
+$transition-fast: .3s;
+
+/* Font-weights */
+$regular: 400;
+$bold: 700;
+
 /* Typography Map */
 $fonts: (
-  14: remcalc(30)
+  14: remcalc(30),
+  16: remcalc(24),
+  22: remcalc(30),
+  24: remcalc(36),
+  30: remcalc(48)
 );

@@ -1,4 +1,6 @@
 import React from 'react';
+import Navigation from './React/Navigation';
+import Newsletter from './React/Newsletter';
 import Footer from './React/footer';
 /*import routeMap from 'json!absolvent/routeMap.json'; */
 
@@ -15,6 +17,7 @@ export default class ProjectDocument extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      burgerExpanded: false,
     };
   }
 
@@ -23,6 +26,31 @@ export default class ProjectDocument extends React.Component {
       location: this.props.location,
     };
   }
+
+  cookiesClose = (e) => {
+    e.preventDefault();
+    localStorage.setItem("cookies", "accepted");
+  };
+
+  toggleMenu = () => {
+    document.body.classList.toggle('menu-open');
+    if( !this.state.burgerExpanded ) {
+      this.setState({
+        burgerExpanded: true
+      });
+    } else {
+      this.setState({
+        burgerExpanded: false
+      });
+    }
+  };
+
+  onClickOutside = () => {
+    document.body.classList.remove('menu-open');
+    this.setState({
+      burgerExpanded: false
+    });
+  };
 
   componentWillReceiveProps(props) {
     if (props.location.pathname !== this.props.location.pathname) {
@@ -37,8 +65,16 @@ export default class ProjectDocument extends React.Component {
   render() {
     return (
       <div>
+        <Navigation
+          toggleMenu={this.toggleMenu}
+          burgerExpanded={this.state.burgerExpanded}
+          onClickOutside={this.onClickOutside}
+          location={this.props.location}
+        />
 
         {this.props.children}
+
+        <Newsletter />
 
         <Footer />
       </div>

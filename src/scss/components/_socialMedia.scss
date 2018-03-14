@@ -1,0 +1,22 @@
+.social-links {
+  display: flex;
+}
+
+.social-link {
+  position: relative;
+  font-size: remcalc(17);
+  margin-right: remcalc(5);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon-social {
+  &:hover {
+    @include breakpoint(medium) {
+      transition: $transition-fast $cubic;
+      color: $light-green;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.btn {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: remcalc(16);
+  border: 0;
+  font-size: remcalc(14);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $regular;
+  text-align: center;
+  text-transform: uppercase;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+
+  @include breakpoint(small) {
+    width: remcalc(165);
+  }
+
+  &.white {
+    background: $white;
+    color: $light-green;
+  }
+
+  &.green {
+    background: $light-green;
+    color: $white;
+  }
+
+  &.small {
+    @include breakpoint(small) {
+      width: remcalc(135);
+    }
+  }
+
+  &:hover {
+    @include breakpoint(medium) {
+      transform: scale(1.06);
+      box-shadow: 0 remcalc(10) remcalc(20) 0 rgba(0, 0, 0, .1);
+    }
+  }
+}
+

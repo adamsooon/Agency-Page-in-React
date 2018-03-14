@@ -17,16 +17,18 @@
     "postcss-discard-empty": "^2.1.0",
     "postcss-flexbugs-fixes": "^2.1.0",
     "postcss-round-subpixels": "^1.2.0",
-    "react-responsive": "^1.2.5",
+    "react-responsive": "^1.2.6",
     "react-scripts": "0.8.3",
     "space-preconfigured-eslint": "^1.4.11"
   },
   "dependencies": {
+    "email-addresses": "^2.0.2",
     "gsap": "^1.19.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-responsive": "^1.2.6",
-    "react-router": "^3.0.0"
+    "react-router": "^3.0.0",
+    "react-slick": "^0.14.6"
   },
   "scripts": {
     "start": "react-scripts start",
